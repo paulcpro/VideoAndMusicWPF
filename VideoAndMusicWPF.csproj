@@ -125,5 +125,40 @@
   <ItemGroup>
     <Resource Include="Assets\search.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\dave.jpg" />
+    <Resource Include="Assets\paul.jpg" />
+    <Resource Include="Assets\visual.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\like-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\settings-5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\success.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\user1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\music-player-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\speaker-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\video-player.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\users-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\music-player.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\download.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

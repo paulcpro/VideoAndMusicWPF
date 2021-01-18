@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:VideoAndMusicWPF"
         xmlns:ccontrols="clr-namespace:VideoAndMusicWPF.Custom_Controls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="740" Width="1100" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True">
-    <Border Background="#3BB5F6">
+        Title="MainWindow" Height="740" Width="1100" Background="Transparent" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True">
+    <Border Background="#3BB5F6" CornerRadius="20">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="250"/>
@@ -16,17 +16,19 @@
         
             <!-- Left Menu -->
             <StackPanel Grid.Column="0">
-                <ccontrols:TripleEllipse/>
+                <ccontrols:TripleEllipse Margin="20,20,0,0" HorizontalAlignment="Left" Height="20" Width="120"/>
 
-                <ccontrols:UserProfileButton ImageSource="" UserText="Ben"/>
+                <ccontrols:UserProfileButton Margin="25,40,0,0" Height="50" ImageSource="./Assets/user1.jpg" UserText="Ben"/>
 
-                <ccontrols:SmallButton ImageSource="" Text="Discover music"/>
-                <ccontrols:SmallButton ImageSource="" Text="Private FM"/>
-                <ccontrols:SmallButton ImageSource="" Text="Video"/>
-                <ccontrols:SmallButton ImageSource="" Text="Friend"/>
-                <ccontrols:SmallButton ImageSource="" Text="iTunes music"/>
-                <ccontrols:SmallButton ImageSource="" Text="Download"/>
-                <ccontrols:SmallButton ImageSource="" Text="My favorite music"/>
+                <StackPanel Margin="25,40,0,0">
+                    <ccontrols:SmallButton ImageSource="../Assets/music-player-2.png" Text="Discover music"/>
+                    <ccontrols:SmallButton Margin="0,20,0,0" ImageSource="../Assets/speaker-4.png" Text="Private FM"/>
+                    <ccontrols:SmallButton Margin="0,20,0,0" ImageSource="../Assets/video-player.png" Text="Video"/>
+                    <ccontrols:SmallButton Margin="0,20,0,0" ImageSource="../Assets/users-1.png" Text="Friend"/>
+                    <ccontrols:SmallButton Margin="0,40,0,0" ImageSource="../Assets/music-player.png" Text="iTunes music"/>
+                    <ccontrols:SmallButton Margin="0,20,0,0" ImageSource="../Assets/download.png" Text="Download"/>
+                    <ccontrols:SmallButton Margin="0,40,0,0" ImageSource="../Assets/like-2.png" Text="My favorite music"/>
+                </StackPanel>
             </StackPanel>
         
             <!-- Main Menu -->
@@ -52,24 +54,29 @@
                             <ImageBrush ImageSource="./Assets/paul.jpg" Stretch="UniformToFill" />
                         </Border.Background>
                     </Border>
-                    <Image Source="./Assets/like-2.png" />
+                    <Image Source="./Assets/like-2.png" Width="20" Height="20"/>
 
                     <Border CornerRadius="10">
                         <Border.Background>
                             <ImageBrush ImageSource="./Assets/visual.jpg" Stretch="UniformToFill" />
                         </Border.Background>
                     </Border>
-                    <Image Source="./Assets/like-2.png" />
+                    <Image Source="./Assets/like-2.png" Width="20" Height="20"/>
 
                     <Border CornerRadius="10">
                         <Border.Background>
                             <ImageBrush ImageSource="./Assets/dave.jpg" Stretch="UniformToFill" />
                         </Border.Background>
                     </Border>
-                    <Image Source="./Assets/like-2.png" />
+                    <Image Source="./Assets/like-2.png"  Width="20" Height="20"/>
                 </StackPanel>
             </StackPanel>
-            
+
+            <Border Width="1000" Height="80" VerticalAlignment="Bottom" Margin="0,0,0,40" CornerRadius="10" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+                <Border.Effect>
+                    <BlurEffect Radius="5" KernelType="Gaussian"/>
+                </Border.Effect>
+            </Border>
         </Grid>
     </Border>
 </Window>

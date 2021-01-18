@@ -13,8 +13,8 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Image Source="{Binding ElementName=this, Path=ImageSource}" Grid.Column="0"/>
-            <TextBlock Text="{Binding ElementName=this, Path=Text}" Grid.Column="1" />
+            <Image Width="20" Height="20" Stretch="UniformToFill" Source="{Binding ElementName=this, Path=ImageSource}" Grid.Column="0"/>
+            <TextBlock Foreground="White" VerticalAlignment="Center" Text="{Binding ElementName=this, Path=Text}" Grid.Column="1" />
         </Grid>
     </Border>
 </UserControl>
