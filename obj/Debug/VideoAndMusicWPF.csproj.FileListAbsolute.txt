@@ -1,0 +1,23 @@
+C:\Git-depot\VideoAndMusicWPF\bin\Debug\VideoAndMusicWPF.exe.config
+C:\Git-depot\VideoAndMusicWPF\bin\Debug\VideoAndMusicWPF.exe
+C:\Git-depot\VideoAndMusicWPF\bin\Debug\VideoAndMusicWPF.pdb
+C:\Git-depot\VideoAndMusicWPF\obj\Debug\Custom Controls\SmallButton.g.cs
+C:\Git-depot\VideoAndMusicWPF\obj\Debug\Custom Controls\TripleEllipse.g.cs
+C:\Git-depot\VideoAndMusicWPF\obj\Debug\MainWindow.g.cs
+C:\Git-depot\VideoAndMusicWPF\obj\Debug\App.g.cs
+C:\Git-depot\VideoAndMusicWPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Git-depot\VideoAndMusicWPF\obj\Debug\VideoAndMusicWPF_MarkupCompile.cache
+C:\Git-depot\VideoAndMusicWPF\obj\Debug\VideoAndMusicWPF_MarkupCompile.lref
+C:\Git-depot\VideoAndMusicWPF\obj\Debug\MainWindow.baml
+C:\Git-depot\VideoAndMusicWPF\obj\Debug\Custom Controls\SmallButton.baml
+C:\Git-depot\VideoAndMusicWPF\obj\Debug\Custom Controls\TripleEllipse.baml
+C:\Git-depot\VideoAndMusicWPF\obj\Debug\VideoAndMusicWPF.g.resources
+C:\Git-depot\VideoAndMusicWPF\obj\Debug\VideoAndMusicWPF.Properties.Resources.resources
+C:\Git-depot\VideoAndMusicWPF\obj\Debug\VideoAndMusicWPF.csproj.GenerateResource.cache
+C:\Git-depot\VideoAndMusicWPF\obj\Debug\VideoAndMusicWPF.csproj.CoreCompileInputs.cache
+C:\Git-depot\VideoAndMusicWPF\obj\Debug\VideoAndMusicWPF.exe
+C:\Git-depot\VideoAndMusicWPF\obj\Debug\VideoAndMusicWPF.pdb
+C:\Git-depot\VideoAndMusicWPF\obj\Debug\Custom Controls\UserProfileButton.g.cs
+C:\Git-depot\VideoAndMusicWPF\obj\Debug\Custom Controls\UserProfileButton.baml
+C:\Git-depot\VideoAndMusicWPF\obj\Debug\Custom Controls\SearchBar.g.cs
+C:\Git-depot\VideoAndMusicWPF\obj\Debug\Custom Controls\SearchBar.baml

@@ -1,0 +1,75 @@
+﻿<Window x:Class="VideoAndMusicWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VideoAndMusicWPF"
+        xmlns:ccontrols="clr-namespace:VideoAndMusicWPF.Custom_Controls"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="740" Width="1100" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True">
+    <Border Background="#3BB5F6">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+        
+            <!-- Left Menu -->
+            <StackPanel Grid.Column="0">
+                <ccontrols:TripleEllipse/>
+
+                <ccontrols:UserProfileButton ImageSource="" UserText="Ben"/>
+
+                <ccontrols:SmallButton ImageSource="" Text="Discover music"/>
+                <ccontrols:SmallButton ImageSource="" Text="Private FM"/>
+                <ccontrols:SmallButton ImageSource="" Text="Video"/>
+                <ccontrols:SmallButton ImageSource="" Text="Friend"/>
+                <ccontrols:SmallButton ImageSource="" Text="iTunes music"/>
+                <ccontrols:SmallButton ImageSource="" Text="Download"/>
+                <ccontrols:SmallButton ImageSource="" Text="My favorite music"/>
+            </StackPanel>
+        
+            <!-- Main Menu -->
+            <StackPanel Grid.Column="1">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Recommend" Foreground="White"/>
+                    <TextBlock Text="Song list" Foreground="White"/>
+                    <TextBlock Text="Singer" Foreground="White"/>
+                    <TextBlock Text="Latest music" Foreground="White"/>
+                    <ccontrols:SearchBar Width="150" Height="30" SearchText="Search" />
+                    <Image Source="./Assets/success.png"/>
+                    <Image Source="./Assets/settings-5.png" />
+                </StackPanel>
+
+                <TextBlock Text="Popular" />
+                <TextBlock Text="Welcome to Wonderland" FontSize="24"/>
+                <TextBlock Text="Popular" />
+                <Button Content="Play" />
+
+                <StackPanel Orientation="Horizontal">
+                    <Border CornerRadius="10">
+                        <Border.Background>
+                            <ImageBrush ImageSource="./Assets/paul.jpg" Stretch="UniformToFill" />
+                        </Border.Background>
+                    </Border>
+                    <Image Source="./Assets/like-2.png" />
+
+                    <Border CornerRadius="10">
+                        <Border.Background>
+                            <ImageBrush ImageSource="./Assets/visual.jpg" Stretch="UniformToFill" />
+                        </Border.Background>
+                    </Border>
+                    <Image Source="./Assets/like-2.png" />
+
+                    <Border CornerRadius="10">
+                        <Border.Background>
+                            <ImageBrush ImageSource="./Assets/dave.jpg" Stretch="UniformToFill" />
+                        </Border.Background>
+                    </Border>
+                    <Image Source="./Assets/like-2.png" />
+                </StackPanel>
+            </StackPanel>
+            
+        </Grid>
+    </Border>
+</Window>
