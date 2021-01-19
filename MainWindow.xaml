@@ -6,14 +6,81 @@
         xmlns:local="clr-namespace:VideoAndMusicWPF"
         xmlns:ccontrols="clr-namespace:VideoAndMusicWPF.Custom_Controls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="740" Width="1100" Background="Transparent" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True">
-    <Border Background="#3BB5F6" CornerRadius="20">
+        Title="MainWindow" Height="740" Width="1000" Background="Transparent" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True">
+    <Window.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="15" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Border CornerRadius="20">
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,0.5" EndPoint="0.5,1">
+                <GradientStop Color="#3BB5F6" Offset="0.5"/>
+                <GradientStop Color="#FEB9F0" Offset="1.0"/>
+            </LinearGradientBrush>
+        </Border.Background>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="250"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-        
+
+            <!--<Grid Margin="350,50,0,0" Grid.ColumnSpan="2">
+                <Image Source="./Assets/dave.jpg" Height="500" Width="500" Stretch="UniformToFill"/>
+            </Grid>-->
+
             <!-- Left Menu -->
             <StackPanel Grid.Column="0">
                 <ccontrols:TripleEllipse Margin="20,20,0,0" HorizontalAlignment="Left" Height="20" Width="120"/>
@@ -30,53 +97,78 @@
                     <ccontrols:SmallButton Margin="0,40,0,0" ImageSource="../Assets/like-2.png" Text="My favorite music"/>
                 </StackPanel>
             </StackPanel>
-        
+
             <!-- Main Menu -->
-            <StackPanel Grid.Column="1">
+            <StackPanel Grid.Column="1" Margin="20,20,0,0">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Recommend" Foreground="White"/>
-                    <TextBlock Text="Song list" Foreground="White"/>
-                    <TextBlock Text="Singer" Foreground="White"/>
-                    <TextBlock Text="Latest music" Foreground="White"/>
-                    <ccontrols:SearchBar Width="150" Height="30" SearchText="Search" />
-                    <Image Source="./Assets/success.png"/>
-                    <Image Source="./Assets/settings-5.png" />
+                    <TextBlock Height="25" VerticalAlignment="Center" Text="Recommend" Foreground="White"/>
+                    <TextBlock Margin="30,0,0,0" Height="25" VerticalAlignment="Center" Text="Song list" Foreground="White"/>
+                    <TextBlock Margin="30,0,0,0" Height="25" VerticalAlignment="Center" Text="Singer" Foreground="White"/>
+                    <TextBlock Margin="30,0,0,0" Height="25" VerticalAlignment="Center" Text="Latest music" Foreground="White"/>
+                    <ccontrols:SearchBar Margin="40,0,0,0" VerticalAlignment="Center" Width="150" Height="25" SearchText="Search" />
+                    <Image Margin="30,0,0,0" Width="20" Height="20" Source="./Assets/success.png"/>
+                    <Image Margin="20,0,0,0" Width="20" Height="20" Source="./Assets/settings-5.png" />
+                    <Image Margin="105,0,0,0" Width="20" Height="20" Source="./Assets/exit.png" />
                 </StackPanel>
 
-                <TextBlock Text="Popular" />
-                <TextBlock Text="Welcome to Wonderland" FontSize="24"/>
-                <TextBlock Text="Popular" />
-                <Button Content="Play" />
+                <TextBlock Margin="0,50,0,0" FontSize="20" FontWeight="Bold" Text="Popular" Foreground="White"/>
+                <TextBlock Margin="0,40,0,0" HorizontalAlignment="Left" Foreground="White" Width="220" FontWeight="Bold" TextWrapping="Wrap" Text="Welcome to Wonderland" FontSize="36"/>
+                <TextBlock Margin="0,30,0,0" Text="Artist Name" Foreground="White" FontSize="16" />
+                <Button BorderThickness="0" Opacity="0.8" Background="#A5C8F7" FontWeight="SemiBold" HorizontalAlignment="Left" Margin="0,30,0,0" Width="70" Height="30" Foreground="White" Content="Play" Style="{DynamicResource ButtonStyle1}" />
 
-                <StackPanel Orientation="Horizontal">
-                    <Border CornerRadius="10">
+                <StackPanel Margin="0,30,0,0" Orientation="Horizontal">
+                    <Border Margin="30,0,0,0"  Height="250" Width="200" CornerRadius="10">
                         <Border.Background>
                             <ImageBrush ImageSource="./Assets/paul.jpg" Stretch="UniformToFill" />
                         </Border.Background>
                     </Border>
-                    <Image Source="./Assets/like-2.png" Width="20" Height="20"/>
-
-                    <Border CornerRadius="10">
+                    <Border Margin="30,0,0,0" Height="250" Width="200" CornerRadius="10">
                         <Border.Background>
                             <ImageBrush ImageSource="./Assets/visual.jpg" Stretch="UniformToFill" />
                         </Border.Background>
                     </Border>
-                    <Image Source="./Assets/like-2.png" Width="20" Height="20"/>
 
-                    <Border CornerRadius="10">
+                    <Border Margin="30,0,0,0"  Height="250" Width="200" CornerRadius="10">
                         <Border.Background>
                             <ImageBrush ImageSource="./Assets/dave.jpg" Stretch="UniformToFill" />
                         </Border.Background>
                     </Border>
-                    <Image Source="./Assets/like-2.png"  Width="20" Height="20"/>
                 </StackPanel>
+                <!-- Attach like option to the vignet -->
+                <!--<StackPanel Margin="350, 0,0,0">
+                    <Image  Margin="350,0,0,0" Source="./Assets/like-2.png" Width="20" Height="20"/>
+                    <Image Source="./Assets/like-2.png" Width="20" Height="20"/>
+                    <Image Source="./Assets/like-2.png"  Width="20" Height="20"/>
+                </StackPanel>-->
             </StackPanel>
 
-            <Border Width="1000" Height="80" VerticalAlignment="Bottom" Margin="0,0,0,40" CornerRadius="10" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center">
-                <Border.Effect>
-                    <BlurEffect Radius="5" KernelType="Gaussian"/>
-                </Border.Effect>
-            </Border>
+            <ccontrols:ActualSongBar Margin="0,650,0,0" Width="800" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+            <!--<Grid Grid.ColumnSpan="2">
+                <Border BorderThickness="2" BorderBrush="#63545D" Opacity="0.2" Width="800" Height="70" VerticalAlignment="Bottom" Margin="0,0,0,40" CornerRadius="10" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+                    <Border.Effect>
+                        <BlurEffect Radius="2" KernelType="Gaussian"/>
+                    </Border.Effect>
+                    <Border.Background>
+                        <SolidColorBrush Color="#4A4A54"/>
+                    </Border.Background>
+                </Border>
+                <Rectangle Margin="115,595,0,0" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" Height="40" Width="40" RadiusX="10" RadiusY="10">
+                    <Rectangle.Fill>
+                        <ImageBrush ImageSource="./Assets/paul.jpg" Stretch="UniformToFill"/>
+                    </Rectangle.Fill>
+                </Rectangle>
+                --><!-- Replace the songs and artist name from the SongViewModel dataContext starting from the SongModel -->
+                <!-- Change Margin depending of the Grid and not the window --><!--
+                <TextBlock Margin="165,655,0,0" Foreground="White" FontWeight="Bold" Text="Name Of The Actual Song" />
+                <TextBlock Margin="165, 670,0,0" Foreground="White" Text="Artist Name"/>
+                <Image Margin="50, 570,0,0" Source="./Assets/back.png" Width="10" Height="10"/>
+                <Image Margin="150, 570,0,0" Source="./Assets/play-button.png" Width="15" Height="15"/>
+                <Image Margin="250, 570,0,0" Source="./Assets/next.png" Width="10" Height="10"/>
+                <TextBlock HorizontalAlignment="Left" Margin="350, 620,0,0" Text="2:56" Height="20" Width="30" Foreground="White"/>
+                <Slider Margin="150, 615,0,0" Height="20" Value="55" Width="400"/>
+                <TextBlock Margin="590, 615,0,0" Height="20" Width="30" Text="4:13" Foreground="White"/>
+            </Grid>-->
         </Grid>
     </Border>
 </Window>

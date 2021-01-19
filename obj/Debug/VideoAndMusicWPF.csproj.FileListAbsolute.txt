@@ -21,3 +21,6 @@ C:\Git-depot\VideoAndMusicWPF\obj\Debug\Custom Controls\UserProfileButton.g.cs
 C:\Git-depot\VideoAndMusicWPF\obj\Debug\Custom Controls\UserProfileButton.baml
 C:\Git-depot\VideoAndMusicWPF\obj\Debug\Custom Controls\SearchBar.g.cs
 C:\Git-depot\VideoAndMusicWPF\obj\Debug\Custom Controls\SearchBar.baml
+C:\Git-depot\VideoAndMusicWPF\obj\Debug\Custom Controls\ActualSongBar.g.cs
+C:\Git-depot\VideoAndMusicWPF\obj\Debug\Custom Controls\ActualSongBar.baml
+C:\Git-depot\VideoAndMusicWPF\obj\Debug\VideoAndMusicWPF.csprojAssemblyReference.cache

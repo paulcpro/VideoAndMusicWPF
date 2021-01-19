@@ -54,8 +54,8 @@
     </UserControl.Resources>
     <Border Background="White" Opacity="0.5" CornerRadius="15">
         <Grid>
-            <Image Source="../Assets/search.png" />
-            <TextBox Text="{Binding ElementName=this, Path=SearchText}" Style="{DynamicResource TextBoxStyle1}"/>
+            <TextBox TextAlignment="Center" Text="{Binding ElementName=this, Path=SearchText}" Style="{DynamicResource TextBoxStyle1}"/>
+            <Image Width="20" Height="20" Margin="10,0,0,0" HorizontalAlignment="Left" Source="../Assets/search.png" />
         </Grid>
     </Border>
 </UserControl>
