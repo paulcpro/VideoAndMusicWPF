@@ -77,9 +77,9 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <!--<Grid Margin="350,50,0,0" Grid.ColumnSpan="2">
-                <Image Source="./Assets/dave.jpg" Height="500" Width="500" Stretch="UniformToFill"/>
-            </Grid>-->
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Margin="330,50,0,0" Grid.ColumnSpan="2">
+                <Image Source="./Assets/snoop.png" Height="600" Width="600" Stretch="UniformToFill"/>
+            </Grid>
 
             <!-- Left Menu -->
             <StackPanel Grid.Column="0">
